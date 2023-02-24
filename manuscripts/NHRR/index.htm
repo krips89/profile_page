@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Neural Re-Rendering of Humans from a Single Image</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	<!-- Meta tags for Zotero grab citation -->
+	<meta name="citation_title" content="Neural Re-Rendering of Humans from a Single Image">
+	<meta name="citation_author" content="Sarkar, Kripasindhu">
+	<meta name="citation_author" content="Mehta, Dushyant">
+	<meta name="citation_author" content="Xu, Weipeng">
+	<meta name="citation_author" content="Golyanik, Vladislav">
+	<meta name="citation_author" content="Theobalt, Christian">
+	<meta name="citation_publication_date" content="2020">
+	<meta name="citation_conference_title" content="European Conference on Computer Vision (ECCV) 2020"> 
+
+	<meta name="robots" content="index,follow">
+	<meta name="description" content="Human re-rendering from a single image is a starkly under-constrained problem, and state-of-the-art algorithms often exhibit undesired artefacts, such as over-smoothing, unrealistic distortions of the body parts and garments, or implausible changes of the texture. To address these challenges, we propose a new method for neural re-rendering of a human under a novel user-defined pose and viewpoint, given one input image. Our algorithm represents body pose and shape as a parametric mesh which can be reconstructed from a single image and easily reposed. Instead of a colour-based UV texture map, our approach further employs a learned high-dimensional UV feature map to encode appearance. This rich implicit representation captures detailed appearance variation across poses, viewpoints, person identities and clothing styles better than learned colour texture maps. The body model with the rendered feature maps is fed through a neural image-translation network that creates the final rendered colour image. The above components are combined in an end-to-end-trained neural network architecture that takes as input a source person image, and images of the parametric body model in the source pose and desired target pose. Experimental evaluation demonstrates that our approach produces higher quality single image re-rendering results than existing methods.> 
+	<link rel="author" href="https://people.mpi-inf.mpg.de/~golyanik/"/> 
+
+	<!-- Fonts and stuff -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/project.css" media="screen" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/iconize.css" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+</head>
+
+<body>
+	<div id="content">
+		<div id="content-inner" >
+			<div class="section logos"  style="text-align:center">
+			
+                <a href="http://gvv.mpi-inf.mpg.de/" target="_blank"><img src="images/gvv-logo.png" height="50"></a>
+		<a href="http://www.mpi-inf.mpg.de/" target="_blank"><img src="images/mpii-logo.png" height="50"></a>
+                <a href="https://saarland-informatics-campus.de/" target="_blank"><img src="images/sic-logo.png" height="50"></a>
+                <a href="https://research.fb.com/category/augmented-reality-virtual-reality/" target="_blank"><img src="images/frl_blue.png" height="50"></a>
+                
+			</div>
+
+			<div class="section head">
+			
+				<h1>Neural Re-Rendering of Humans from a Single Image</h1>
+
+				<div class="authors">
+                    <a href="http://people.mpi-inf.mpg.de/~ksarkar/" target="_blank">Kripasindhu Sarkar</a><sup>1</sup>&#160;&#160;
+                    <a href="http://people.mpi-inf.mpg.de/~dmehta/" target="_blank">Dushyant Mehta</a><sup>1</sup>&#160;&#160;
+                    <a href="https://sites.google.com/view/xuweipeng" target="_blank">Weipeng Xu</a><sup>2</sup>&#160;&#160;
+					<a href="http://people.mpi-inf.mpg.de/~golyanik/" target="_blank">Vladislav Golyanik</a><sup>1</sup>&#160;&#160;
+					<a href="http://www.mpi-inf.mpg.de/~theobalt/" target="_blank">Christian Theobalt</a><sup>1</sup>&#160;&#160;
+				</div>
+
+				<div class="affiliations">
+                    <sup>1</sup><a href="http://www.mpi-inf.mpg.de/" target="_blank">Max Planck Institute for Informatics</a>, <a href="https://saarland-informatics-campus.de/" target="_blank">Saarland Informatics Campus</a></br>
+                    <sup>2</sup><a href="https://research.fb.com/category/augmented-reality-virtual-reality/" target="_blank">Facebook Reality Labs</a> &#160;&#160; 
+				</div>
+
+				<div class="venue"><a href="https://eccv2020.eu/" target="_blank">European Conference on Computer Vision (ECCV) 2020</a></div>
+				<div class="additional"><a href="https://www.rsipvision.com/ECCV2020-Monday/" target="_blank">Featured in "ECCV 2020 Daily"</a></div>
+				
+			</div>
+
+			
+			<div class="section teaser">
+                <video width="640" height="360" controls><source src="data/full_vid.mp4" type="video/mp4"></video>
+			</div>
+			
+			
+
+			<div class="section abstract">
+				<h2>Abstract</h2>
+				<p>
+                Human re-rendering from a single image is a starkly under-constrained problem, and state-of-the-art algorithms often exhibit undesired artefacts, such as over-smoothing, unrealistic distortions of the body parts and garments, or implausible changes of the texture. To address these challenges, we propose a new method for neural re-rendering of a human under a novel user-defined pose and viewpoint, given one input image. Our algorithm represents body pose and shape as a parametric mesh which can be reconstructed from a single image and easily reposed. Instead of a colour-based UV texture map, our approach further employs a learned high-dimensional UV feature map to encode appearance. This rich implicit representation captures detailed appearance variation across poses, viewpoints, person identities and clothing styles better than learned colour texture maps. The body model with the rendered feature maps is fed through a neural image-translation network that creates the final rendered colour image. The above components are combined in an end-to-end-trained neural network architecture that takes as input a source person image, and images of the parametric body model in the source pose and desired target pose. Experimental evaluation demonstrates that our approach produces higher quality single image re-rendering results than existing methods. 
+				</p>
+			</div>
+			
+			
+			<div class="section Our Results">
+				<h2>Results</h2>
+				<p>
+				We have used the train/test pairs of DeepFashion dataset that was also used in the existing works such as PoseGAN, DPT, CBI, etc. Specifically, our training and testing pairs were generated from the publically available code of <a href="https://github.com/AliaksandrSiarohin/pose-gan">PoseGAN</a>. In this page, we provide our results for the 176 testing pairs (a subset of the full testing pairs) that was used in the paper for quantitative results. Please find our results in the <b>Downloads</b> section.
+				</p>
+			</div>
+			
+
+			<div class="section downloads">
+				<h2>Downloads</h2>
+				<center>
+				<ul>
+                
+					<li class="grid">
+						<div class = "griditem">
+							<a href="data/1415.pdf" target="_blank" class="imageLink"><img src = "images/pdf.png"></a><br/>
+							Paper<br/>
+							<a href="data/1415.pdf" target="_blank">PDF, 7.1 MB</a>
+						</div>
+					</li>
+					
+					<li class="grid">
+						<div class = "griditem">
+							<a href="data/1415-supp.pdf" target="_blank" class="imageLink"><img src = "images/pdf.png"></a><br/>
+							Supplement<br/>
+							<a href="data/1415-supp.pdf" target="_blank">Supp, 6.1 MB</a>
+						</div>
+					</li>
+					
+					<li class="grid">
+						<div class = "griditem">
+							<a href="data/1415-supp.mp4" target="_blank" class="imageLink"><img src = "images/mp4.png"></a><br/>
+							Video<br/>
+							<a href="data/1415-supp.mp4" target="_blank">Video, 15.5 MB</a>
+						</div>
+					</li>
+					
+					<li class="grid">
+						<div class = "griditem">
+							<a href="data/results_NHRR.7z" target="_blank" class="imageLink"><img src = "images/teaser_original.png"></a><br/>
+							Results: 176 testing pairs<br/>
+							<a href="data/results_NHRR.7z" target="_blank">Results, 1.06 MB</a>
+						</div>
+					</li>
+					
+					
+				</ul>
+				</center>
+			</div>
+			<br />
+			
+			
+			
+			<div class="section list">
+				<h2>Citation</h2>
+				<p><a href="data/bibtex.bib" target="_blank">BibTeX, 1 KB</a></p>
+				<div class="section bibtex">
+					<pre>
+@inproceedings{Sarkar2020, 
+    author = {Sarkar, Kripasindhu and Mehta, Dushyant and Xu, Weipeng and Golyanik, Vladislav and Theobalt, Christian}, 
+    title = {Neural Re-Rendering of Humans from a Single Image}, 
+    booktitle = {European Conference on Computer Vision (ECCV)}, 
+    year = {2020} 
+}    				</div>
+			</div>
+
+            
+			<div class="section acknowledgments">
+				<h2>Acknowledgments</h2>
+				<p>
+                This work was supported by the ERC Consolidator Grant 4DReply (770784).
+				</p>
+			</div>
+
+			<div class="section contact">
+				<h2>Contact</h2>
+				For questions and clarifications please get in touch with:<br />
+                Kripasindhu Ksarkar <a href='mailt&#111;&#58;ksarkar&#64;&#109;p&#105;&#45;inf&#46;%6D&#37;&#55;0%67&#46;&#100;e'>ksarkar&#64;mp&#105;-inf&#46;mp&#103;&#46;&#100;e</a> 
+                <br />
+                Vladislav Golyanik <a href='mailt&#111;&#58;golyanik&#64;&#109;p&#105;&#45;inf&#46;%6D&#37;&#55;0%67&#46;&#100;e'>golyanik&#64;mp&#105;-inf&#46;mp&#103;&#46;&#100;e</a>
+			</div>
+
+			<div class="section">
+				<hr class="smooth">
+				This page is <a href="http://www.zotero.org" target="_blank">Zotero</a> translator friendly. Page last updated 
+				<script type="text/javascript">
+					var m = "This page was last updated: " + document.lastModified;
+					var p = m.length-9;
+					document.writeln("<left>");
+					document.write(m.substring(p, 0) + ".");
+					document.writeln("</left>");
+				</script>
+				<a href="https://www.mpi-inf.mpg.de/imprint/">Imprint</a>. <a href="https://data-protection.mpi-klsb.mpg.de/inf/gvv.mpi-inf.mpg.de/projects/">Data Protection</a>.
+			</div>
+		</div>
+	</div>
+</body>
+</html>
